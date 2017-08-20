@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace HealthCatalyst.Apis.People
+namespace HealthCatalyst.Apis.People.Web
 {
     public class Program
     {

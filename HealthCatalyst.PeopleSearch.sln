@@ -5,7 +5,17 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCatalyst.PeopleSearch.Web", "HealthCatalyst.PeopleSearch.Web\HealthCatalyst.PeopleSearch.Web.csproj", "{177BE02C-5FBB-4059-AF0B-338D5B9DA288}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCatalyst.Apis.People", "HealthCatalyst.Apis.People\HealthCatalyst.Apis.People.csproj", "{E1046197-4535-4451-B6C9-FBD8BA9BBCBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCatalyst.Apis.People.Web", "HealthCatalyst.Apis.People.Web\HealthCatalyst.Apis.People.Web.csproj", "{E1046197-4535-4451-B6C9-FBD8BA9BBCBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E0E951EB-2B48-4006-B507-90DBA1116D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{D9F17251-DD09-473F-894D-65EE2E76F764}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCatalyst.Apis.People.Data", "HealthCatalyst.Apis.People.Data\HealthCatalyst.Apis.People.Data.csproj", "{A6BCE80A-8615-4CCB-ACD9-C40077AE962F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthCatalyst.Apis.People.Web.UnitTests", "HealthCatalyst.Apis.People.Web.UnitTests\HealthCatalyst.Apis.People.Web.UnitTests.csproj", "{86DD7915-FEA3-49BC-A292-B7BDD2DC9780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCatalyst.Apis.People.Web.IntegrationTests", "HealthCatalyst.Apis.People.Web.IntegrationTests\HealthCatalyst.Apis.People.Web.IntegrationTests.csproj", "{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +31,28 @@ Global
 		{E1046197-4535-4451-B6C9-FBD8BA9BBCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1046197-4535-4451-B6C9-FBD8BA9BBCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1046197-4535-4451-B6C9-FBD8BA9BBCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BCE80A-8615-4CCB-ACD9-C40077AE962F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BCE80A-8615-4CCB-ACD9-C40077AE962F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BCE80A-8615-4CCB-ACD9-C40077AE962F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BCE80A-8615-4CCB-ACD9-C40077AE962F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86DD7915-FEA3-49BC-A292-B7BDD2DC9780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86DD7915-FEA3-49BC-A292-B7BDD2DC9780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86DD7915-FEA3-49BC-A292-B7BDD2DC9780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86DD7915-FEA3-49BC-A292-B7BDD2DC9780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{177BE02C-5FBB-4059-AF0B-338D5B9DA288} = {D9F17251-DD09-473F-894D-65EE2E76F764}
+		{E1046197-4535-4451-B6C9-FBD8BA9BBCBB} = {E0E951EB-2B48-4006-B507-90DBA1116D7F}
+		{A6BCE80A-8615-4CCB-ACD9-C40077AE962F} = {E0E951EB-2B48-4006-B507-90DBA1116D7F}
+		{86DD7915-FEA3-49BC-A292-B7BDD2DC9780} = {E0E951EB-2B48-4006-B507-90DBA1116D7F}
+		{AE44FBE5-198C-42F9-BF9B-A744A3E3EBBC} = {E0E951EB-2B48-4006-B507-90DBA1116D7F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F356EC4-8CFB-40DD-906A-183AA750D378}

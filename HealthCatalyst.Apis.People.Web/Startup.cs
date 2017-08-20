@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using HealthCatalyst.Apis.People.Data.Infrastructure;
+using HealthCatalyst.Apis.People.Data.Repositories;
+using HealthCatalyst.Apis.People.Web.Mappers;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace HealthCatalyst.Apis.People
+namespace HealthCatalyst.Apis.People.Web
 {
     public class Startup
     {
@@ -17,7 +21,17 @@ namespace HealthCatalyst.Apis.People
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
+            services.Configure<AppSettings>(Configuration);
+
             services.AddMvc();
+
+            // DI for data.
+            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PeopleDatabase")));
+            services.AddScoped<IPersonRepository, PersonRepository>();
+
+            // DI for web.
+            services.AddScoped<IPersonV1Mapper, PersonV1Mapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
