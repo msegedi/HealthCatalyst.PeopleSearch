@@ -37,6 +37,12 @@ namespace HealthCatalyst.Apis.People.Web
 
             // DI for web.
             services.AddScoped<IPersonV1Mapper, PersonV1Mapper>();
+
+            // Execute database migrations. Note that I'm doing this to make it easy to run as a demo, but I would definitely NOT have this in production code.
+            using (var context = new DatabaseContext())
+            {
+                context.Database.Migrate();
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
