@@ -14,8 +14,9 @@
 ## Instructions for running the app
 * The solution was created in VS 2017.
 * The projects are .NET Core 2.0 projects. The SDK will need installed to run it locally.
-* The HealthCatalyst.Apis.People.Data project uses LocalDB and EF Code-First + Migrations. Since there are two runnable projects, ensure HealthCatalyst.Apis.People.Web is set as the startup project prior to running `Update-Database`.
-* Before running the HealthCatalyst.PeopleSearch.Web (UI) project, ensure HealthCatalyst.Apis.People.Web (API) is running.
+* The HealthCatalyst.Apis.People.Data project uses LocalDB and EF Code-First + Migrations. Migrations will be automatically run during startup of the API project.
+* Run HealthCatalyst.Apis.People.Web (API).
+* Run HealthCatalyst.PeopleSearch.Web (UI).
 
 ## To make it production-ready / wish list
 * UI features
