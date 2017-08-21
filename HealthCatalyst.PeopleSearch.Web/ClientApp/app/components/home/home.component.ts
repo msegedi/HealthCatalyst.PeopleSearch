@@ -36,6 +36,7 @@ export class HomeComponent {
             },
             error => {
                 alert(<any>error); // ToDo: Create a prettier way to display errors.
+                this.loadingStop();
             },
             () => {
                 this.searchHasRan = true;

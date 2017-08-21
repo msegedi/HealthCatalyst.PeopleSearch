@@ -7,13 +7,11 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
-import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { PersonService } from './services/person.service';
 
 @NgModule({
     declarations: [
         AppComponent,
-        FetchDataComponent,
         HomeComponent
     ],
     imports: [
@@ -24,7 +22,6 @@ import { PersonService } from './services/person.service';
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
