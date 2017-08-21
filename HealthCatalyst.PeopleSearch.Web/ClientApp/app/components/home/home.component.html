@@ -6,6 +6,11 @@
     <button (click)="onSearchClicked()">Search</button>
 </div>
 
+<div class="search-results-message" *ngIf="searchHasRan">
+    <div *ngIf="people.length > 0">Displaying {{ people.length }} result(s).</div>
+    <div *ngIf="people.length === 0">Your search didn't return any results.</div>
+</div>
+
 <div class="container search-results">
     <div class="row" *ngFor='let person of people; let i = index;'>
         <div *ngIf='i > 0'><hr /></div>

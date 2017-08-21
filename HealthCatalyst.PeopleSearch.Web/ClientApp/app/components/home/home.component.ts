@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 import { IPerson } from '../../services/person';
 import { PersonService } from '../../services/person.service';
@@ -9,10 +10,11 @@ import { PersonService } from '../../services/person.service';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+    searchHasRan: boolean = false;
     searchText: string;
     people: IPerson[] = [];
 
-    constructor(private _personService: PersonService) {
+    constructor(private _personService: PersonService, private _spinnerService: Ng4LoadingSpinnerService) {
 
     }
 
@@ -27,12 +29,25 @@ export class HomeComponent {
             return;
         }
 
+        this.loadingStart();
         this._personService.searchPeople(this.searchText)
             .subscribe(people => {
                 this.people = people;
             },
             error => {
                 alert(<any>error); // ToDo: Create a prettier way to display errors.
+            },
+            () => {
+                this.searchHasRan = true;
+                this.loadingStop();
             });
+    }
+
+    private loadingStart() {
+        this._spinnerService.show();
+    }
+
+    private loadingStop() {
+        this._spinnerService.hide();
     }
 }
