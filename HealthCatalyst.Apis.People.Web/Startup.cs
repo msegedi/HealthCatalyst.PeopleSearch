@@ -26,6 +26,11 @@ namespace HealthCatalyst.Apis.People.Web
 
             services.AddMvc();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAny", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             // DI for data.
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("PeopleDatabase")));
             services.AddScoped<IPersonRepository, PersonRepository>();

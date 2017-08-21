@@ -59,7 +59,7 @@ namespace HealthCatalyst.Apis.People.Data.SeedData
                 LastName = "Master",
                 BirthDate = new DateTime(1990, 10, 2),
                 Interests = "hiking, running",
-                PictureFileName = "jaunita_master.jpg",
+                PictureFileName = null,
                 AddressLine1 = "80 S. Clay Rd.",
                 AddressLine2 = null,
                 City = "Cambridge",

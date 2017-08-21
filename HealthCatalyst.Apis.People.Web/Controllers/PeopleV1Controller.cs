@@ -1,5 +1,6 @@
 ﻿using HealthCatalyst.Apis.People.Data.Repositories;
 using HealthCatalyst.Apis.People.Web.Mappers;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -7,6 +8,7 @@ namespace HealthCatalyst.Apis.People.Web.Controllers
 {
     [Produces("application/json")]
     [Route("api/v1/people")]
+    [EnableCors("AllowAny")]
     public class PeopleV1Controller : Controller
     {
         private readonly IPersonRepository _personRepo;
@@ -29,6 +31,9 @@ namespace HealthCatalyst.Apis.People.Web.Controllers
             var daPeople = await _personRepo.SearchByName(name);
 
             var people = await _personMapper.MapFromDataEntities(daPeople);
+
+            // Fake slow searching :)
+            System.Threading.Thread.Sleep(5000);
 
             return Ok(people);
         }

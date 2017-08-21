@@ -21,7 +21,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\person_pictures\" />
+    <None Remove="ClientApp\app\components\home\person.service.ts" />
+    <None Remove="ClientApp\app\services\person.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\app\components\app\images\bg.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\components\app\images\logotype.svg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\services\person.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\person.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
